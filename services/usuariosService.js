@@ -23,7 +23,7 @@ async function loginUsuarioDB(email, password) {
 async function obtenerUsuariosDB(page = 1, limit = 5, email = "") {
   const offset = (page - 1) * limit;
 
-  let query = "SELECT * FROM users";
+  let query = "SELECT id, name, email, balance, role FROM users";
   let params = [];
 
   if (email) {
