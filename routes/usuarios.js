@@ -5,6 +5,18 @@ const verificarToken = require("../middlewares/authMiddleware");
 const verificarRol = require("../middlewares/roleMiddleware");
 const controlador = require("../controllers/usuariosController");
 
+/**
+ * @swagger
+ * /api/v1/usuarios:
+ *   get:
+ *     summary: Obtener lista de usuarios
+ *     tags: [Usuarios]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Lista de usuarios
+ */
 router.get("/", verificarToken, controlador.obtenerUsuarios);
 router.get("/:nombre", controlador.obtenerUsuarioPorNombre);
 
