@@ -21,6 +21,8 @@ app.get("/", function(req, res) {
 app.use(errorHandler);
 
 // 👇 SIEMPRE AL FINAL
-app.listen(3000, function() {
-  console.log("Servidor corriendo en el puerto 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, function() {
+  console.log("Servidor corriendo en el puerto " + PORT);
 });
